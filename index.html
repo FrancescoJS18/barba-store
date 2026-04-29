@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barba Store – App de Gestión de Caja</title>
+     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar-top" id="progressBar"></div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">BARBA<span>STORE</span></div>
+        <ul class="nav-links">
+            <li><a href="#problema">Problema</a></li>
+            <li><a href="#solucion">Solución</a></li>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#tecnologia">Tech</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================================
+     1. PORTADA / HERO
+========================================== -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-badge reveal">
+                <i class="fas fa-circle pulse-dot"></i>
+                Proyecto Universitario · Lima, Perú · 2026
+            </div>
+
+            <h1 class="hero-title reveal" style="transition-delay:0.1s">
+                Gestión de
+                <span class="line-gold">Cierre de Caja</span>
+                para Barba Store
+            </h1>
+
+            <p class="hero-sub reveal" style="transition-delay:0.2s">
+                Desarrollo de una aplicación móvil para la gestión de cierre de caja y control de operaciones
+                financieras en la empresa Barba Store, Lima-Perú, 2026.
+            </p>
+
+            <div class="hero-team reveal" style="transition-delay:0.3s">
+                <div class="avatars">
+                    <div class="avatar">JM</div>
+                    <div class="avatar">KR</div>
+                    <div class="avatar">LP</div>
+                </div>
+                <div class="hero-team-text">
+                    <strong>Equipo de Desarrollo</strong>
+                    Ingeniería de Sistemas · 2026
+                </div>
+            </div>
+
+            <div class="hero-cta reveal" style="transition-delay:0.4s">
+                <button class="btn-primary"
+                    onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-play"></i> Ver Proyecto
+                </button>
+                <button class="btn-outline"
+                    onclick="document.getElementById('modulos').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-layer-group"></i> Módulos
+                </button>
+            </div>
+        </div>
+
+        <!-- PHONE MOCKUP -->
+        <div class="hero-phone reveal-right" style="transition-delay:0.3s">
+            <div class="phone-frame">
+                <!-- floating chips -->
+                <div class="phone-chip chip-1">
+                    <div class="chip-dot" style="background:var(--green-lt)"></div>
+                    <span>Caja Abierta</span>
+                </div>
+                <div class="phone-chip chip-2">
+                    <i class="fas fa-shield-halved" style="color:var(--gold)"></i>
+                    <span>100% Seguro</span>
+                </div>
+                <div class="phone-chip chip-3">
+                    <i class="fas fa-bolt" style="color:var(--gold-lt)"></i>
+                    <span>Tiempo real</span>
+                </div>
+
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <!-- Mini App UI -->
+                    <div class="app-header">
+                        <div>
+                            <div class="app-header-title">💈 Barba Store</div>
+                            <div class="app-date">Martes, 29 Abr 2026</div>
+                        </div>
+                        <div
+                            style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--gold-lt)">
+                            AD</div>
+                    </div>
+
+                    <div class="app-balance-card">
+                        <div class="app-balance-label">SALDO ACTUAL DE CAJA</div>
+                        <div class="app-balance-amount">S/ 2,480.50</div>
+                        <div class="app-balance-sub"><i class="fas fa-arrow-up"></i> +S/ 340 hoy · 8 transacciones</div>
+                    </div>
+
+                    <div class="app-row">
+                        <div class="app-mini-card">
+                            <div class="app-mini-icon">📥</div>
+                            <div class="app-mini-label">Ingresos</div>
+                            <div class="app-mini-val green">S/ 560</div>
+                        </div>
+                        <div class="app-mini-card">
+                            <div class="app-mini-icon">📤</div>
+                            <div class="app-mini-label">Egresos</div>
+                            <div class="app-mini-val red">S/ 220</div>
+                        </div>
+                        <div class="app-mini-card">
+                            <div class="app-mini-icon">🧾</div>
+                            <div class="app-mini-label">Ventas</div>
+                            <div class="app-mini-val">14</div>
+                        </div>
+                    </div>
+
+                    <div class="app-section-label">Últimas transacciones</div>
+
+                    <div class="app-tx-item">
+                        <div class="app-tx-left">
+                            <div class="app-tx-dot" style="background:var(--green-lt)"></div>
+                            <div>
+                                <div class="app-tx-name">Corte + Barba</div>
+                                <div class="app-tx-time">10:32 AM</div>
+                            </div>
+                        </div>
+                        <div class="app-tx-amount pos">+S/ 45</div>
+                    </div>
+                    <div class="app-tx-item">
+                        <div class="app-tx-left">
+                            <div class="app-tx-dot" style="background:var(--green-lt)"></div>
+                            <div>
+                                <div class="app-tx-name">Diseño Fade</div>
+                                <div class="app-tx-time">11:05 AM</div>
+                            </div>
+                        </div>
+                        <div class="app-tx-amount pos">+S/ 35</div>
+                    </div>
+                    <div class="app-tx-item">
+                        <div class="app-tx-left">
+                            <div class="app-tx-dot" style="background:#E05C5C"></div>
+                            <div>
+                                <div class="app-tx-name">Insumos</div>
+                                <div class="app-tx-time">01:15 PM</div>
+                            </div>
+                        </div>
+                        <div class="app-tx-amount neg">-S/ 80</div>
+                    </div>
+
+                    <button class="app-close-btn"
+                        onclick="alert('✅ Cierre de caja procesado correctamente.\n📊 Reporte generado automáticamente.')">
+                        🔐 CERRAR CAJA DEL DÍA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     2. REALIDAD PROBLEMÁTICA
+========================================== -->
+    <section id="problema">
+        <div class="sec-number">02</div>
+        <div class="layout">
+            <div>
+                <div class="section-label reveal">Contexto</div>
+                <h2 class="section-title reveal" style="transition-delay:0.1s">Realidad <em>Problemática</em></h2>
+                <div class="divider reveal" style="transition-delay:0.15s"></div>
+                <p class="section-sub reveal" style="transition-delay:0.2s">
+                    Las pequeñas y medianas empresas del sector de peluquerías y barberías en Lima, como Barba Store,
+                    enfrentan serios desafíos en su gestión financiera diaria debido a la ausencia de sistemas digitales
+                    integrados.
+                </p>
+                <br>
+                <p class="section-sub reveal" style="transition-delay:0.25s" style="margin-top:16px">
+                    El control de caja se realiza manualmente con cuadernos, hojas de cálculo o sin ningún registro,
+                    generando discrepancias, pérdidas económicas y decisiones basadas en datos incorrectos.
+                </p>
+
+                <div class="stagger" style="margin-top:36px;">
+                    <div class="card" style="margin-bottom:14px;">
+                        <div style="display:flex;gap:12px;align-items:center;">
+                            <div class="card-icon gold"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <div style="font-weight:600;font-size:0.9rem;">Métodos Manuales</div>
+                                <div style="font-size:0.8rem;color:var(--muted)">Registro en papel o sin sistema,
+                                    propenso a errores humanos.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-bottom:14px;">
+                        <div style="display:flex;gap:12px;align-items:center;">
+                            <div class="card-icon gold"><i class="fas fa-calculator"></i></div>
+                            <div>
+                                <div style="font-weight:600;font-size:0.9rem;">Sin Control de Caja</div>
+                                <div style="font-size:0.8rem;color:var(--muted)">No existe seguimiento sistemático de
+                                    ingresos y egresos diarios.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center;">
+                            <div class="card-icon gold"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <div style="font-weight:600;font-size:0.9rem;">Decisiones sin Datos</div>
+                                <div style="font-size:0.8rem;color:var(--muted)">La gerencia no cuenta con reportes
+                                    confiables para tomar decisiones.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stat-row reveal-right">
+                <div class="stat-item">
+                    <div class="stat-num">68%</div>
+                    <div class="stat-desc"><strong>PyMEs en Lima</strong> no utiliza ningún software de gestión
+                        financiera (INEI 2024)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">3×</div>
+                    <div class="stat-desc">Mayor probabilidad de <strong>errores contables</strong> en empresas con
+                        registro manual vs. digital</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">40%</div>
+                    <div class="stat-desc">De las pérdidas no detectadas provienen de <strong>descuadres de
+                            caja</strong> no controlados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">S/850</div>
+                    <div class="stat-desc">Pérdida mensual promedio estimada en Barba Store por falta de <strong>control
+                            financiero</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     3. PROBLEMAS EN BARBA STORE
+========================================== -->
+    <section id="problemas-barba">
+        <div class="sec-number">03</div>
+        <div class="section-label reveal">Diagnóstico</div>
+        <h2 class="section-title reveal" style="transition-delay:0.1s">Problemas en <em>Barba Store</em></h2>
+        <div class="divider reveal" style="transition-delay:0.15s"></div>
+        <p class="section-sub reveal" style="transition-delay:0.2s">
+            Mediante el análisis de la empresa se identificaron cinco problemáticas críticas que impactan directamente
+            en la rentabilidad y operatividad del negocio.
+        </p>
+
+        <div class="grid-3 stagger" style="margin-top:50px;">
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-not-equal"></i></div>
+                <h3>Discrepancias en Cierre de Caja</h3>
+                <p>Diferencias frecuentes entre el dinero físico y los registros al finalizar el día, sin posibilidad de
+                    rastrear el origen del error.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-eye-slash"></i></div>
+                <h3>Falta de Control Financiero</h3>
+                <p>Ausencia de visibilidad en tiempo real sobre ingresos, egresos y rentabilidad. El dueño desconoce el
+                    estado real del negocio.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-file-circle-xmark"></i></div>
+                <h3>Reportes Limitados</h3>
+                <p>No se generan reportes periódicos ni comparativos. Las decisiones se toman sin sustento estadístico
+                    ni histórico de datos.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-shield-xmark"></i></div>
+                <h3>Riesgos de Seguridad</h3>
+                <p>El manejo de efectivo sin registros digitales expone al negocio a riesgos de robo interno, pérdidas
+                    no detectadas y fraudes.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Brecha Tecnológica</h3>
+                <p>Mientras la competencia digitaliza sus operaciones, Barba Store permanece en métodos analógicos
+                    perdiendo competitividad.</p>
+            </div>
+            <div class="problem-card" style="border-color:rgba(201,168,76,0.3); background:rgba(201,168,76,0.04);">
+                <div class="problem-icon" style="background:rgba(201,168,76,0.12);color:var(--gold)"><i
+                        class="fas fa-lightbulb"></i></div>
+                <h3 style="color:var(--gold)">¿La Solución?</h3>
+                <p>Una aplicación móvil diseñada específicamente para las necesidades operativas y financieras de Barba
+                    Store.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     4. SOLUCIÓN PROPUESTA
+========================================== -->
+    <section id="solucion">
+        <div class="sec-number">04</div>
+        <div class="layout">
+            <div>
+                <div class="section-label reveal">Propuesta</div>
+                <h2 class="section-title reveal" style="transition-delay:0.1s">La <em>Solución</em><br>que Barba Store
+                    necesita</h2>
+                <div class="divider reveal" style="transition-delay:0.15s"></div>
+                <p class="section-sub reveal" style="transition-delay:0.2s">
+                    Una aplicación móvil nativa, intuitiva y segura que digitaliza el proceso de cierre de caja y
+                    control financiero diario, adaptada al flujo real de trabajo de la barbería.
+                </p>
+
+                <div class="solution-list reveal" style="transition-delay:0.3s">
+                    <div class="solution-item">
+                        <div class="solution-check"><i class="fas fa-check"></i></div>
+                        <div class="solution-text">
+                            <h4>Registro digital en tiempo real</h4>
+                            <p>Cada venta y egreso se registra al instante, eliminando el papel y los cuadernos.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-check"><i class="fas fa-check"></i></div>
+                        <div class="solution-text">
+                            <h4>Cierre de caja automatizado</h4>
+                            <p>El sistema calcula, verifica y genera el reporte de cierre en un solo toque.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-check"><i class="fas fa-check"></i></div>
+                        <div class="solution-text">
+                            <h4>Reportes y análisis inteligentes</h4>
+                            <p>Gráficos y estadísticas de rendimiento diario, semanal y mensual en el bolsillo.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-check"><i class="fas fa-check"></i></div>
+                        <div class="solution-text">
+                            <h4>Acceso seguro por roles</h4>
+                            <p>Control de permisos para administrador y barbero, con historial de acciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- mockup windows -->
+            <div class="mockup-screens reveal-right" style="transition-delay:0.2s">
+                <div class="mockup-window w1">
+                    <div class="mockup-title">📊 VENTAS DEL MES</div>
+                    <div class="mini-bars">
+                        <div class="mini-bar" style="height:30%"></div>
+                        <div class="mini-bar" style="height:55%"></div>
+                        <div class="mini-bar" style="height:40%"></div>
+                        <div class="mini-bar" style="height:70%"></div>
+                        <div class="mini-bar"
+                            style="height:85%;background:linear-gradient(180deg,var(--gold-lt),rgba(201,168,76,0.3))">
+                        </div>
+                        <div class="mini-bar" style="height:60%"></div>
+                        <div class="mini-bar"
+                            style="height:90%;background:linear-gradient(180deg,var(--green-lt),rgba(14,124,91,0.3))">
+                        </div>
+                    </div>
+                    <div style="font-size:0.55rem;color:var(--muted);margin-top:8px">Lun · Mar · Mié · Jue · Vie · Sáb ·
+                        Dom</div>
+                </div>
+
+                <div class="mockup-window w2">
+                    <div class="mockup-title">🍩 DISTRIBUCIÓN</div>
+                    <div class="donut-wrap">
+                        <div class="donut"></div>
+                        <div class="donut-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:var(--green-lt)"></div><span>Cortes 62%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:var(--gold)"></div><span>Barba 21%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:#E05C5C"></div><span>Otros 17%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mockup-window w3">
+                    <div class="mockup-title">✅ CIERRE HOY</div>
+                    <div style="font-size:0.58rem;color:var(--muted);margin-bottom:8px">Martes 29 Abr</div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.6rem;margin-bottom:6px;">
+                        <span>Total Ingresos</span><span style="color:var(--green-lt);font-weight:700">S/ 560.00</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.6rem;margin-bottom:6px;">
+                        <span>Total Egresos</span><span style="color:#E05C5C;font-weight:700">S/ 220.00</span>
+                    </div>
+                    <div style="width:100%;height:1px;background:var(--border);margin:8px 0;"></div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.65rem;">
+                        <span style="font-weight:600">Neto del Día</span><span
+                            style="color:var(--gold-lt);font-weight:800">S/ 340.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     5. MÓDULOS DEL SISTEMA
+========================================== -->
+    <section id="modulos">
+        <div class="sec-number">05</div>
+        <div class="section-label reveal">Sistema</div>
+        <h2 class="section-title reveal" style="transition-delay:0.1s">Módulos del <em>Sistema</em></h2>
+        <div class="divider reveal" style="transition-delay:0.15s"></div>
+        <p class="section-sub reveal" style="transition-delay:0.2s">
+            La aplicación está dividida en tres módulos principales, diseñados para cubrir todo el ciclo de operaciones
+            financieras de Barba Store.
+        </p>
+
+        <div class="grid-3 stagger" style="margin-top:50px">
+            <div class="module-card">
+                <div class="module-num">01</div>
+                <div class="card-icon gold" style="margin-bottom:12px"><i class="fas fa-cash-register"></i></div>
+                <h3>Registro de Ventas y Gastos</h3>
+                <p>Ingreso rápido de cada transacción con categorías, descripción, método de pago y firma de
+                    responsable. Historial completo y auditable.</p>
+                <div class="module-tags">
+                    <span class="tag">Ventas</span>
+                    <span class="tag">Egresos</span>
+                    <span class="tag">Categorías</span>
+                    <span class="tag">Efectivo / Yape</span>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <div class="module-num">02</div>
+                <div class="card-icon green" style="margin-bottom:12px"><i class="fas fa-vault"></i></div>
+                <h3>Cierre de Caja Automático</h3>
+                <p>Al finalizar el día, el sistema consolida todas las transacciones, calcula el saldo final, detecta
+                    descuadres y genera el acta de cierre digital firmada.</p>
+                <div class="module-tags">
+                    <span class="tag">Auto-cálculo</span>
+                    <span class="tag">Detección errores</span>
+                    <span class="tag">Firma digital</span>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <div class="module-num">03</div>
+                <div class="card-icon blue" style="margin-bottom:12px"><i class="fas fa-chart-bar"></i></div>
+                <h3>Reportes y Análisis</h3>
+                <p>Dashboard con gráficos interactivos, comparativas de períodos, exportación a PDF, indicadores de
+                    rentabilidad y alertas automáticas por anomalías.</p>
+                <div class="module-tags">
+                    <span class="tag">Dashboard</span>
+                    <span class="tag">Exportar PDF</span>
+                    <span class="tag">Alertas</span>
+                    <span class="tag">KPIs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     6. BENEFICIOS / MÉTRICAS
+========================================== -->
+    <section id="beneficios">
+        <div class="sec-number">06</div>
+        <div class="section-label reveal">Impacto</div>
+        <h2 class="section-title reveal" style="transition-delay:0.1s">Beneficios <em>Esperados</em></h2>
+        <div class="divider reveal" style="transition-delay:0.15s"></div>
+        <p class="section-sub reveal" style="transition-delay:0.2s">
+            Los resultados proyectados tras la implementación de la aplicación, basados en benchmarks de digitalización
+            en PyMEs del sector servicios en Lima.
+        </p>
+
+        <div class="grid-4 stagger" style="margin-top:50px">
+            <div class="metric-card">
+                <div class="metric-icon">🎯</div>
+                <div class="metric-number"><span class="counter" data-target="90">0</span>%</div>
+                <div class="metric-label">Reducción de errores en cierre de caja</div>
+                <div class="metric-bar-wrap">
+                    <div class="metric-bar" style="--target-w:90%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">⚡</div>
+                <div class="metric-number"><span class="counter" data-target="70">0</span>%</div>
+                <div class="metric-label">Menos tiempo en procesos de cierre diario</div>
+                <div class="metric-bar-wrap">
+                    <div class="metric-bar" style="--target-w:70%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">🔍</div>
+                <div class="metric-number"><span class="counter" data-target="100">0</span>%</div>
+                <div class="metric-label">Trazabilidad de operaciones financieras</div>
+                <div class="metric-bar-wrap">
+                    <div class="metric-bar" style="--target-w:100%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">📡</div>
+                <div class="metric-number" style="font-size:2rem;padding-top:8px">Real<br>Time</div>
+                <div class="metric-label">Reportes y alertas disponibles en tiempo real</div>
+                <div class="metric-bar-wrap">
+                    <div class="metric-bar" style="--target-w:100%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- extra detail cards -->
+        <div class="grid-3 stagger" style="margin-top:30px">
+            <div class="card">
+                <div class="card-icon green"><i class="fas fa-coins"></i></div>
+                <h3>Ahorro Mensual Estimado</h3>
+                <p>Reducción de pérdidas no detectadas y optimización del tiempo operativo equivalen a aproximadamente
+                    <strong style="color:var(--gold)">S/ 650–900/mes</strong> en eficiencia ganada.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon gold"><i class="fas fa-mobile-screen"></i></div>
+                <h3>Adopción Sencilla</h3>
+                <p>Interfaz intuitiva diseñada para usuarios sin conocimientos técnicos. Curva de aprendizaje estimada
+                    de <strong style="color:var(--gold)">menos de 2 días</strong>.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon blue"><i class="fas fa-expand-arrows-alt"></i></div>
+                <h3>Escalabilidad</h3>
+                <p>La arquitectura permite expandir la app a múltiples sucursales, nuevos módulos (inventario, RRHH) y
+                    conexión con SUNAT sin reestructurar el sistema.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     7. TECNOLOGÍA
+========================================== -->
+    <section id="tecnologia">
+        <div class="sec-number">07</div>
+        <div class="section-label reveal">Stack</div>
+        <h2 class="section-title reveal" style="transition-delay:0.1s">Tecnología <em>Utilizada</em></h2>
+        <div class="divider reveal" style="transition-delay:0.15s"></div>
+        <p class="section-sub reveal" style="transition-delay:0.2s">
+            La solución se construye sobre un stack moderno y probado, elegido por su rendimiento, mantenibilidad y
+            capacidad de escalar en el tiempo.
+        </p>
+
+        <div class="tech-grid stagger">
+            <div class="tech-card">
+                <span class="tech-card-icon">⚛️</span>
+                <h4>React Native</h4>
+                <p>Framework principal para el desarrollo móvil multiplataforma</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🐦</span>
+                <h4>Flutter</h4>
+                <p>Alternativa evaluada por su UI fluida y rendimiento nativo</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🤖</span>
+                <h4>Android</h4>
+                <p>Plataforma principal de despliegue (Android 10+)</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🍎</span>
+                <h4>iOS</h4>
+                <p>Compatibilidad total con iPhone (iOS 14+)</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🔥</span>
+                <h4>Firebase</h4>
+                <p>Backend, autenticación, base de datos en tiempo real y hosting</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🐘</span>
+                <h4>PostgreSQL</h4>
+                <p>Base de datos relacional para reportes y auditoría financiera</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">🔐</span>
+                <h4>JWT Auth</h4>
+                <p>Autenticación segura con tokens y gestión de sesiones por roles</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-card-icon">📦</span>
+                <h4>REST API</h4>
+                <p>Servicios web documentados para integraciones futuras (SUNAT, etc.)</p>
+            </div>
+        </div>
+
+        <!-- architecture flow -->
+        <div class="reveal" style="margin-top:60px; text-align:center;">
+            <div class="section-label" style="margin-bottom:20px;">Arquitectura del Sistema</div>
+            <div class="arch-wrap">
+                <div class="arch-node"><i class="fas fa-mobile-screen"></i>App Móvil<br><small
+                        style="font-size:0.6rem;color:var(--muted)">React Native</small></div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node"><i class="fas fa-server"></i>API REST<br><small
+                        style="font-size:0.6rem;color:var(--muted)">Node.js</small></div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node"><i class="fas fa-database"></i>Base de Datos<br><small
+                        style="font-size:0.6rem;color:var(--muted)">PostgreSQL</small></div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node"><i class="fas fa-file-pdf"></i>Reportes<br><small
+                        style="font-size:0.6rem;color:var(--muted)">PDF Export</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     8. REFERENCIAS
+========================================== -->
+    <section id="referencias">
+        <div class="sec-number">08</div>
+        <div class="section-label reveal">Benchmarking</div>
+        <h2 class="section-title reveal" style="transition-delay:0.1s">Apps de <em>Referencia</em></h2>
+        <div class="divider reveal" style="transition-delay:0.15s"></div>
+        <p class="section-sub reveal" style="transition-delay:0.2s">
+            Se analizaron aplicaciones similares del mercado internacional para identificar mejores prácticas,
+            funcionalidades clave y oportunidades de diferenciación para Barba Store.
+        </p>
+
+        <div class="grid-3 stagger" style="margin-top:50px">
+            <div class="ref-card">
+                <div class="ref-logo" style="background:rgba(26,58,92,0.3);color:#6BA3DC">Di</div>
+                <h3>Digits</h3>
+                <p>Plataforma de contabilidad para pequeñas empresas que usa IA para categorizar gastos automáticamente
+                    y generar reportes financieros simplificados.</p>
+                <div class="ref-tags">
+                    <span class="ref-tag">Contabilidad IA</span>
+                    <span class="ref-tag">Reportes auto</span>
+                    <span class="ref-tag">PyMEs</span>
+                </div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-logo" style="background:rgba(14,124,91,0.2);color:var(--green-lt)">CF</div>
+                <h3>CashFlow</h3>
+                <p>App de gestión de flujo de caja en tiempo real, con visualizaciones de proyecciones, integración
+                    bancaria y alertas de liquidez para negocios.</p>
+                <div class="ref-tags">
+                    <span class="ref-tag">Flujo de caja</span>
+                    <span class="ref-tag">Tiempo real</span>
+                    <span class="ref-tag">Alertas</span>
+                </div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-logo" style="background:rgba(201,168,76,0.15);color:var(--gold)">Li</div>
+                <h3>Lili</h3>
+                <p>Fintech diseñada para freelancers y autónomos que combina cuenta bancaria, gestión de impuestos y
+                    control de gastos en una sola aplicación móvil.</p>
+                <div class="ref-tags">
+                    <span class="ref-tag">Fintech</span>
+                    <span class="ref-tag">Todo en uno</span>
+                    <span class="ref-tag">Móvil first</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- differentiation table -->
+        <div class="card reveal" style="margin-top:40px; overflow-x:auto;">
+            <h3 style="margin-bottom:20px;font-family:var(--font-head)">📊 Comparativa con la Solución Propuesta</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+                <thead>
+                    <tr style="border-bottom:1px solid var(--border)">
+                        <th style="text-align:left;padding:10px;color:var(--muted);font-weight:600">Característica</th>
+                        <th style="padding:10px;color:var(--muted);font-weight:600">Digits</th>
+                        <th style="padding:10px;color:var(--muted);font-weight:600">CashFlow</th>
+                        <th style="padding:10px;color:var(--muted);font-weight:600">Lili</th>
+                        <th style="padding:10px;color:var(--gold);font-weight:700">Barba Store App</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                        <td style="padding:10px">Cierre de caja</td>
+                        <td style="text-align:center;padding:10px">⚠️</td>
+                        <td style="text-align:center;padding:10px">✅</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px;color:var(--green-lt);font-weight:700">✅</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                        <td style="padding:10px">Adaptado a barberías</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px;color:var(--green-lt);font-weight:700">✅</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                        <td style="padding:10px">Español / Perú</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px">⚠️</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px;color:var(--green-lt);font-weight:700">✅</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px">Sin costo mensual</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px">❌</td>
+                        <td style="text-align:center;padding:10px;color:var(--green-lt);font-weight:700">✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- =========================================
+     FOOTER
+========================================== -->
+    <footer>
+        <div class="footer-logo">BARBA STORE</div>
+        <p class="footer-text">
+            Aplicación Móvil para la Gestión de Cierre de Caja<br>
+            y Control de Operaciones Financieras
+        </p>
+        <div class="footer-divider"></div>
+        <p class="footer-text" style="font-size:0.75rem">
+            Proyecto de Investigación Aplicada · Lima, Perú · 2026<br>
+            Facultad de Ingeniería de Sistemas
+        </p>
+        <div class="footer-uni">
+            <i class="fas fa-graduation-cap"></i>
+            Universidad Cesar Vallejo · Ingeniería de Sistemas · 2026
+        </div>
+        <p style="margin-top:30px;font-size:0.68rem;color:rgba(255,255,255,0.15)">
+            Todos los derechos reservados · Barba Store App © 2026
+        </p>
+    </footer>
+    </body>
+    <script src="script.js"></script>
+</html>
